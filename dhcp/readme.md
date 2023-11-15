@@ -6,7 +6,7 @@
   <li>Sudo cp /etc/netplan/01-netcfg.yaml /etc/netplan/01-netcfg.yaml.bak</li>
 </ul>
 <p>Do the command ip a. This would show you the new network adapter that you just added. For me it was ens37</p>
-![Alt text](https://github.com/kmartin011/Server-Config-and-Documentation/blob/main/dhcp/image.png)
+![Example Image](https://github.com/kmartin011/Server-Config-and-Documentation/blob/main/dhcp/image.png)
 <p>Where</p>
 <ul>
   <li>DEVICE_NAME is the actual device name to be configured</li>
@@ -15,4 +15,23 @@
   <li>NETMASK is the netmask for the IP address.</li>
   <li>GATEWAY is the address for your gateway.</li>
   <li>NAMESERVER is the comma-separated list of DNS nameservers.</li>
+</ul>
+<p>Let's Test that Configuration and Apply it</p>
+<ul>
+  <li>sudo netplan try</li>
+  <li>sudo netplan apply</li>
+</ul>
+<h3>Installation of isc-dhcp-server</h3>
+<p>To install the isc-dhcp-server, run the following command at prompt:</p>
+<ul>
+  <li>sudo apt install isc-dhcp-server</li>
+</ul>
+<h3>Configuartions</h3>
+<p>We will be making edits to the /etc/dhcp/dhcpd.conf file. Configure the scope and options for a gateway and nameserver in the file.</p>
+![Example image](https://github.com/kmartin011/Server-Config-and-Documentation/assets/148782985/de1ad710-ceec-48bb-901d-3a32a00b7a05)
+<p>Ensure to assign it to the corresponding interface in the /etc/default/isc-dhcp-server file</p>
+![image](https://github.com/kmartin011/Server-Config-and-Documentation/assets/148782985/c1adc385-b370-4f2e-98e8-555fc491de10)
+<p>Next restart the dhcpd server:</p>
+<ul>
+  <li>sudo systemctl restart isc-dhcp-server.service</li>
 </ul>
