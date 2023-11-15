@@ -6,7 +6,7 @@
   <li>Sudo cp /etc/netplan/01-netcfg.yaml /etc/netplan/01-netcfg.yaml.bak</li>
 </ul>
 <p>Do the command ip a. This would show you the new network adapter that you just added. For me it was ens37</p>
-![Alt text](Images/image.png)
+![Alt text](https://github.com/kmartin011/Server-Config-and-Documentation/blob/main/dhcp/image.png)
 <p>Where</p>
 <ul>
   <li>DEVICE_NAME is the actual device name to be configured</li>
