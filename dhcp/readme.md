@@ -6,4 +6,12 @@
   <li>Sudo cp /etc/netplan/01-netcfg.yaml /etc/netplan/01-netcfg.yaml.bak</li>
 </ul>
 <p>Do the command ip a. This would show you the new network adapter that you just added. For me it was ens37</p>
-![example](C:\Users\W0474751\Desktop)
+<p>Where</p>
+<ul>
+  <li>DEVICE_NAME is the actual device name to be configured</li>
+  <li>yes/no is an option to enable or disable dhcp4.</li>
+  <li>IP is the IP address for the device.</li>
+  <li>NETMASK is the netmask for the IP address.</li>
+  <li>GATEWAY is the address for your gateway.</li>
+  <li>NAMESERVER is the comma-separated list of DNS nameservers.</li>
+</ul>
